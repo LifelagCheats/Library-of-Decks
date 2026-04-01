@@ -1,0 +1,56 @@
+---
+import { processDie } from '@scripts/ts/cardprocessor.ts';
+import type { Card, DieWithEffects } from '@types/card.ts';
+
+interface Props {
+  card: Card;
+}
+
+const { card } = Astro.props;
+
+const diceWithEffects: DieWithEffects[] | undefined = card.dice?.map((die, index: number) => ({
+  ...die,
+  hookedEffects: card.effects?.filter(e => e.hook === index + 1) ?? []
+} as DieWithEffects));
+---
+
+<div class="card-wrapper">
+  <div class={`card rarity-${card.rarity.toLowerCase().replace(/\s+/g, '-')}`}>
+    <img src={card.card_cover} alt={card.name} class="cardcover"/>
+    <div class="dice-container">
+      {card.dice?.map((die) => (
+        <div class="die">
+          <img src={`/icons/${die.type}Die.png`} alt={die.type}/>
+        </div>
+      ))}
+    </div>
+    <div class="cardname">{card.name}</div>
+  </div>
+
+  <div class={`card-info rarity-${card.rarity.toLowerCase().replace(/\s+/g, '-')}`}>
+    <div class="info-table">
+      {card.effects?.map(effect => (
+        !effect.hook && (
+          <div class="effect">
+            <div set:html={processDie(effect.trigger)} />
+            <span class="effect-description">{effect.description}</span>
+          </div>
+        )
+      ))}
+      <div class="separator"></div>
+      <div class="pagedice">
+        {diceWithEffects?.map((die, index) => (
+          <div class="infodie" data-die-id={index + 1}>
+            <img src={`/icons/${die.type}Die.png`} alt={die.type}/>
+            <span class={`die-range ${die.type}`}>{die.range[0]}-{die.range[1]}</span>
+            <div class="die-hook">
+              {die.hookedEffects.map(effect => (
+                <span div set:html={processDie(effect.trigger) + ' ' + effect.description} />
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>

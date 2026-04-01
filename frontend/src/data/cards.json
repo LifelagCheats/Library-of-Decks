@@ -1,0 +1,111 @@
+{
+  "charge": {
+    "id": "charge",
+    "name": "Charge",
+    "rarity": "hardcover",
+    "light": 0,
+    "type": "melee",
+    "card_cover": "/cards/LittleHelper_charge.jpg",
+    "dice": [
+      {
+        "type": "block",
+        "range": [
+          5,
+          5
+        ]
+      },
+      {
+        "type": "block",
+        "range": [
+          5,
+          5
+        ]
+      },
+      {
+        "type": "block",
+        "range": [
+          5,
+          5
+        ]
+      }
+    ],
+    "effects": [
+      {
+        "trigger": "On use",
+        "description": "Gain 4 Strength and 1 Endurance next Scene"
+      }
+    ]
+  },
+  "graze_the_grass": {
+    "id": "graze_the_grass",
+    "name": "Graze the Grass",
+    "rarity": "paperback",
+    "light": 0,
+    "type": "melee",
+    "card_cover": "/cards/Rcorp14.jpg",
+    "dice": [
+      {
+        "type": "block",
+        "range": [
+          3,
+          7
+        ]
+      },
+      {
+        "type": "pierce",
+        "range": [
+          3,
+          4
+        ]
+      }
+    ],
+    "effects": [
+      {
+        "trigger": "On use",
+        "description": "Restore 1 light and gain 3 Charge"
+      }
+    ]
+  },
+  "sense_quarry": {
+    "id": "sensequarry",
+    "name": "Sense Quarry",
+    "rarity": "limited",
+    "light": 1,
+    "type": "melee",
+    "card_cover": "/cards/TheIndex6.jpg",
+    "dice": [
+      {
+        "type": "block",
+        "range": [
+          2,
+          5
+        ]
+      },
+      {
+        "type": "block",
+        "range": [
+          2,
+          5
+        ]
+      },
+      {
+        "type": "pierce",
+        "range": [
+          3,
+          7
+        ]
+      }
+    ],
+    "effects": [
+      {
+        "trigger": "On use",
+        "description": "If there are 7 or more pages in hand, all dice on this page gain +2 power"
+      },
+      {
+        "trigger": "On hit",
+        "description": "Inflict 1 Bind next Scene",
+        "hook": 3
+      }
+    ]
+  }
+}

@@ -1,0 +1,66 @@
+$attack-color: #A34341;
+$defense-color: #5FAFF0;
+$trigger_main-color: #D3D40A;
+
+.separator {
+  width: 100%;
+  height: 2px;
+  margin-top: 20px;
+  background: linear-gradient(to right, transparent, white, transparent);
+  filter: blur(1.5px);
+}
+
+.trigger-onuse {
+  color: $trigger_main-color;
+}
+
+.trigger-onhit {
+  color: $trigger_main-color;
+}
+
+.effect-description {
+  color: white;
+}
+
+.die-hook {
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.pagedice {
+  display: flex;
+  margin-top: 30px;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.infodie {
+  display: flex; // keeps image and text horizontal
+  align-items: center;
+  gap: 20px;
+
+  img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+  }
+}
+
+.die-range {
+  font-size: 16px;
+
+  &.pierce,
+  &.blunt,
+  &.slash {
+    color: $attack-color;
+  }
+
+  &.block,
+  &.evade {
+    color: $defense-color;
+  }
+
+  font-weight: bold;
+}

@@ -1,0 +1,36 @@
+---
+import Layout from '@layouts/layout.astro'
+import '@styles/scss/card.scss';
+import '@styles/scss/deck.scss';
+import '@styles/scss/main.scss';
+import '@styles/scss/effects.scss'
+import cards from '@data/cards.json';
+import type { Card } from '@types/card';
+import CardItem from '@components/cardGenerator.astro';
+
+
+const cardList = Object.values(cards) as Card[];
+---
+
+<!doctype html>
+<Layout title="Library of Decks">
+  <div id="deckgrid"> 
+    <div class="deck-container">
+      <span class="title">Deck</span>
+      <div class="cards-grid">
+        {Array.from({ length: 9 }).map((_) => (
+          <div class="cardSlot"></div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <div id="cardgrid">
+    {cardList.map(card => (
+      <CardItem card={card} />
+    ))}
+  </div>
+<script>
+  import { setupDrag } from '../scripts/ts/drag.ts';
+  setupDrag();
+</script>

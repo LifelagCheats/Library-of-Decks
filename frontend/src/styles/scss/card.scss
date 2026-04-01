@@ -1,0 +1,180 @@
+$paperback-border: #2D6423;
+$paperbackgr1: #030603;
+$paperbackgr2: #091006;
+$hardcover-border: #2A4798;
+$hardcovergr1: #04050B;
+$hardcovergr2: #070C1A;
+$limited-border: #5A328C;
+$limitedgr1: #07040A;
+$limitedgr2: #100918;
+$objetdart-border: #BEA344;
+$objetdartgr1: #0A0903;
+$objetdartgr2: #221D0C;
+
+$light: #CCB206;
+
+$cardH: 300px;
+$cardW: 200px;
+
+#cardgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.card-wrapper {
+  position: relative;
+  width: 200px; // explicit width so it doesn't shrink
+}
+
+.card {
+  height: $cardH;
+  width: $cardW;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  background-color: #010200;
+  color: rgb(255, 255, 255);
+  overflow: hidden;
+  transform: rotate(0deg);
+  position: relative;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 20px;
+  margin-top: 20px;
+  margin-right: 30px;
+  border: 0px solid black;
+
+  cursor: grab;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border 0.25s ease-in;
+
+  &.dragging {
+    cursor: grabbing;
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px $light;
+    border: 2px solid $light;
+  }
+
+
+  &.rarity-paperback {
+    background: linear-gradient(-15deg, $paperbackgr1, $paperbackgr2);
+    border: 2px solid $paperback-border;
+  }
+
+  &.rarity-hardcover {
+    background: linear-gradient(-15deg, $hardcovergr1, $hardcovergr2);
+    border: 2px solid $hardcover-border;
+  }
+
+  &.rarity-limited {
+    background: linear-gradient(-15deg, $limitedgr1, $limitedgr2);
+    border: 2px solid $limited-border;
+  }
+
+  &.rarity-objet-dart {
+    background: linear-gradient(-15deg, $objetdartgr1, $objetdartgr2);
+    border: 2px solid $objetdart-border;
+  }
+}
+
+.cardname {
+  transform: rotate(-5deg);
+  z-index: 10;
+  position: relative;
+  pointer-events: none;
+  user-select: none;
+}
+
+.cardcover {
+  position: absolute;
+  width: 110%;
+  object-fit: cover;
+  z-index: -1;
+  transform: rotate(-4deg);
+  pointer-events: none;
+  user-select: none;
+  margin-top: 60px;
+}
+
+.dice-container {
+  display: flex;
+  gap: 5px;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(-50%);
+}
+
+.die {
+  width: 50px;
+  height: 50px;
+  margin: 2px;
+  position: relative;
+  flex-shrink: 0;
+  pointer-events: none;
+  user-select: none;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.card-info {
+  position: absolute;
+  left: 205px;
+  top: 19.9px;
+  width: $cardW;
+  height: $cardH - 10;
+  background: black;
+  padding: 15px;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 20;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+
+  &.rarity-paperback {
+    background: linear-gradient(-15deg, $paperbackgr1, $paperbackgr2);
+    border: 2px solid $paperback-border;
+  }
+
+  &.rarity-hardcover {
+    background: linear-gradient(-15deg, $hardcovergr1, $hardcovergr2);
+    border: 2px solid $hardcover-border;
+  }
+
+  &.rarity-limited {
+    background: linear-gradient(-15deg, $limitedgr1, $limitedgr2);
+    border: 2px solid $limited-border;
+  }
+
+  &.rarity-objet-dart {
+    background: linear-gradient(-15deg, $objetdartgr1, $objetdartgr2);
+    border: 2px solid $objetdart-border;
+  }
+
+}
+
+.card-wrapper:hover .card-info {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.card-wrapper:hover .card {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}

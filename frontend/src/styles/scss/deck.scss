@@ -47,4 +47,9 @@
   &:hover {
     border: 1px solid #ffffff;
   }
+
+  .card {
+    transform-origin: top left;
+    transform: scale(0.4);
+  }
 }

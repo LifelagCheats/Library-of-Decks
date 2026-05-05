@@ -1,11 +1,14 @@
-export function setupDrag() {
+import { placeOnDeck } from "./deck";
+
+export function setupDrag(): void {
   let dragged: HTMLElement | null = null;
   let offsetX: number = 0;
   let offsetY: number = 0;
   let previousX: number = 0;
+  const slots = document.querySelectorAll('.cardSlot') as NodeListOf<HTMLElement>; 
 
   document.querySelectorAll('.card').forEach(card => {
-    card.addEventListener('pointerdown', (e) => {
+    card.addEventListener('pointerdown', (e: Event): void => {
       const pe = e as PointerEvent;
       dragged = card as HTMLElement;
       const rect = dragged.getBoundingClientRect();
@@ -20,7 +23,7 @@ export function setupDrag() {
     });
   });
 
-  document.addEventListener('pointermove', (e) => {
+  document.addEventListener('pointermove', (e: PointerEvent): void => {
     if (!dragged) return;
     const pe = e as PointerEvent;
     let deltaX: number = pe.clientX - previousX;
@@ -35,9 +38,17 @@ export function setupDrag() {
       cardInfo.style.position = 'fixed';
     }
     previousX = pe.clientX
+
+    if (assignedSlot) {
+      dragged.style.left = `${x}px`
+      dragged.style.top = `${x}px`
+
+      dragged.classList.remove('dragging')
+      dragged = null
+    }
   });
 
-  document.addEventListener('pointerup', () => {
+  document.addEventListener('pointerup', (): void => {
     if (!dragged) return;
     dragged.classList.remove('dragging')
     dragged.releasePointerCapture?.(0);

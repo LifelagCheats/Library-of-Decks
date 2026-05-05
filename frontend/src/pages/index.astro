@@ -18,8 +18,8 @@ const cardList = Object.values(cards) as Card[];
     <div class="deck-container">
       <span class="title">Deck</span>
       <div class="cards-grid">
-        {Array.from({ length: 9 }).map((_) => (
-          <div class="cardSlot"></div>
+        {Array.from({ length: 9 }).map((_, index) => (
+          <div class="cardSlot" id={`slot-${index}`}></div>
         ))}
       </div>
     </div>

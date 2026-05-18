@@ -16,7 +16,8 @@ export type DieWithEffects = Die & {
 };
 
 export type Card = {
-  id: string;
+  id: number;
+  cid: string;
   name: string;
   rarity: string;
   light: number;

@@ -10,6 +10,8 @@ import CardItem from '@components/cardGenerator.astro';
 
 
 const cardList = Object.values(cards) as Card[];
+
+cardList.sort((a: Card, b: Card) => Number(a.id) - Number(b.id));
 ---
 
 <!doctype html>
@@ -24,11 +26,13 @@ const cardList = Object.values(cards) as Card[];
       </div>
     </div>
   </div>
-
-  <div id="cardgrid">
-    {cardList.map(card => (
-      <CardItem card={card} />
-    ))}
+  
+  <div class="cardselector">
+    <div id="cardgrid">
+        {cardList.map(card => (
+          <CardItem card={card} />
+        ))}
+    </div>
   </div>
 <script>
   import { setupDrag } from '../scripts/ts/drag.ts';

@@ -1,17 +1,22 @@
-export function placeOnDeck(card: HTMLElement, targets: NodeListOf<HTMLElement>): HTMLElement | null {
-  for (const target of targets) {
-    const rect = card.getBoundingClientRect();
-    const points = [
-      [rect.left + rect.width / 2, rect.top + rect.height / 2],
-      [rect.left, rect.top],
-      [rect.right, rect.top],
-      [rect.left, rect.bottom],
-      [rect.right, rect.bottom],
-    ];
+export function elementOverlap(
+  card: HTMLElement,
+  targets: NodeListOf<HTMLElement>
+): HTMLElement | null {
 
-    if (points.some(([x, y]) => document.elementsFromPoint(x, y).includes(target))) {
-      return target; 
-    }
+  const cardRect = card.getBoundingClientRect();
+
+  for (const target of targets) {
+    const targetRect = target.getBoundingClientRect();
+
+    const overlap = !(
+      cardRect.right < targetRect.left ||
+      cardRect.left > targetRect.right ||
+      cardRect.bottom < targetRect.top ||
+      cardRect.top > targetRect.bottom
+    );
+
+    if (overlap) return target;
   }
+
   return null;
 }

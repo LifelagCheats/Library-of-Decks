@@ -1,3 +1,16 @@
+.cardselector {
+    position: fixed;
+
+    right: 20px;
+    top: 20px;
+
+    width: 600px;
+    height: 90vh;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
 .deck-container {
   width: 100%;
   margin: 0 auto;

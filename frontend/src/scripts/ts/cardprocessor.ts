@@ -6,5 +6,7 @@ export function processDie(trigger: string): string {
 
   parsed = parsed.replace(/On hit/g,
     '<span class="trigger-onhit"> On Hit </span>')
+
+  parsed = parsed.replace(/none/g, '')
   return parsed;
 }

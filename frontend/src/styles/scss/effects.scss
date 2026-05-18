@@ -1,5 +1,6 @@
 $attack-color: #A34341;
 $defense-color: #5FAFF0;
+$counter-color: #F4AF2F;
 $trigger_main-color: #D3D40A;
 
 .separator {
@@ -31,7 +32,7 @@ $trigger_main-color: #D3D40A;
 
 .pagedice {
   display: flex;
-  margin-top: 30px;
+  margin-top: 10px;
   flex-direction: column;
   gap: 10px;
 }
@@ -39,11 +40,11 @@ $trigger_main-color: #D3D40A;
 .infodie {
   display: flex; // keeps image and text horizontal
   align-items: center;
-  gap: 20px;
+  gap: 10px;
 
   img {
-    width: 35px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
     object-fit: contain;
   }
 }
@@ -60,6 +61,14 @@ $trigger_main-color: #D3D40A;
   &.block,
   &.evade {
     color: $defense-color;
+  }
+
+  &.cpierce,
+  &.cblunt,
+  &.cslash,
+  &.cblock,
+  &.cevade {
+    color: $counter-color; 
   }
 
   font-weight: bold;

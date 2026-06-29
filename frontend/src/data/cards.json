@@ -116,41 +116,94 @@
       }
     ]
   },
-  "charge": {
-    "id": 1000,
-    "cid": "charge",
-    "name": "Charge",
-    "rarity": "hardcover",
-    "light": 0,
+  "gut-harvesting": {
+    "id": 11,
+    "cid": "gut-harvesting",
+    "name": "Gut Harvesting",
+    "rarity": "limited",
+    "light": 3,
     "type": "melee",
-    "card_cover": "/cards/LittleHelper_charge.jpg",
+    "card_cover": "/cards/Rats4.jpg",
     "dice": [
       {
-        "type": "block",
-        "range": [
-          5,
-          5
-        ]
+        "type": "slash",
+        "range": [3, 6]
+      },
+      {
+        "type": "slash",
+        "range": [3, 5]
       },
       {
         "type": "block",
-        "range": [
-          5,
-          5
-        ]
-      },
-      {
-        "type": "block",
-        "range": [
-          5,
-          5
-        ]
+        "range": [1, 4]
       }
     ],
     "effects": [
       {
-        "trigger": "On use",
-        "description": "Gain 4 Strength and 1 Endurance next Scene"
+        "trigger": "On hit",
+        "description": "Inflict 1 Bleed next Scene",
+        "hook": 1
+      },
+      {
+        "trigger": "On hit",
+        "description": "Inflict 1 Bleed next Scene",
+        "hook": 2
+      }
+    ]
+  },
+  "rats-survival": {
+    "id": 12,
+    "cid": "rats-guide-to-survival",
+    "name": "Rats' Guide to Survival",
+    "rarity": "paperback",
+    "light": 2,
+    "type": "melee",
+    "card_cover": "/cards/Rats2.jpg",
+    "dice": [
+      {
+        "type": "block",
+        "range": [1, 6]
+      },
+      {
+        "type": "slash",
+        "range": [3, 4]
+      },
+      {
+        "type": "evade",
+        "range": [1, 7]
+      }
+    ],
+    "effects": [
+      {
+        "trigger": "On hit",
+        "description": "Inflict 1 Bleed next Scene",
+        "hook": 2
+      }
+    ]
+  },
+  "dirty-blow": {
+    "id": 13,
+    "cid": "dirty-blow",
+    "name": "Dirty Blow",
+    "rarity": "limited",
+    "light": 2,
+    "type": "melee",
+    "card_cover": "/cards/Rats3.jpg",
+    "dice": [
+      {
+        "type": "blunt",
+        "range": [3, 7]
+      },
+      {
+        "type": "block",
+        "range": [1, 3]
+      }
+    ],
+    "effects": [
+      {
+        "trigger": "On clash win",
+        "description": "Inflict 2 Bleed next Scene",
+        "hook": 1
       }
     ]
   },
@@ -159,7 +212,7 @@
     "cid": "graze-the-grass",
     "name": "Graze the Grass",
     "rarity": "paperback",
-    "light": 0,
+    "light": 1,
     "type": "melee",
     "card_cover": "/cards/Rcorp14.jpg",
     "dice": [

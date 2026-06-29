@@ -1,4 +1,4 @@
-import { elementOverlap } from "./deck";
+const slotMap = new Map<HTMLElement, HTMLElement | null>();
 
 export function setupDrag(): void {
   let dragged: HTMLElement | null = null;
@@ -7,8 +7,13 @@ export function setupDrag(): void {
   let previousX: number = 0;
   let pointerId: number;
   const slots = document.querySelectorAll('.cardSlot') as NodeListOf<HTMLElement>;
+  slots.forEach(slot => {
+    slotMap.set(slot, null);
+  })
+
+  const cardgrid: HTMLElement | null = document.getElementById("cardgrid") 
   let assignedSlot: HTMLElement | null = null;
-  let wrapper: HTMLElement;
+  let wrapper: HTMLElement | null = null;
 
   document.querySelectorAll('.card').forEach(card => {
     card.addEventListener('pointerdown', (e: Event): void => {
@@ -18,9 +23,18 @@ export function setupDrag(): void {
       offsetX = pe.clientX - rect.left;
       offsetY = pe.clientY - rect.top;
       pointerId = pe.pointerId;
+      wrapper = dragged.closest("wrapper");
 
-      wrapper.style.position = 'fixed';
-      dragged.style.zIndex = '1000';
+      if (wrapper) {
+        wrapper.style.position = 'fixed';
+        dragged.style.zIndex = '1000';
+      }
+
+      if (assignedSlot) {
+        if(slotMap.get(assignedSlot) === dragged) {
+          slotMap.set(assignedSlot, null)
+        }
+      }
 
       dragged.setPointerCapture(pointerId);
       dragged.classList.add('dragging')
@@ -53,22 +67,79 @@ export function setupDrag(): void {
 
   document.addEventListener('pointerup', (): void => {
     if (!dragged) return;
+    if (!wrapper) return;
+    if (!cardgrid) return;
     dragged.classList.remove('dragging');
 // I think 'dragging' makes itself clear. 
     dragged.releasePointerCapture?.(pointerId);
     if (assignedSlot) {
-      const rect = assignedSlot.getBoundingClientRect();
-      const draggedRect = dragged.getBoundingClientRect();
-
-      if (!dragged.classList.contains('stored')) {
-        console.debug("a slot has been assigned")
-        wrapper.style.left = `${rect.left + rect.width / 2 - draggedRect.width / 2}px`;
-        wrapper.style.top = `${rect.top + rect.height / 2 - draggedRect.height / 2}px`;
-
-        dragged.classList.add('stored');
-      }
+      assignCardToSlot(dragged, assignedSlot, wrapper, slotMap);
+     }
+    else {
+      cardgrid.appendChild(wrapper);
+      wrapper.style.position = '';
+      wrapper.style.left = '';
+      wrapper.style.top = '';
+      wrapper.style.width = '';
+      wrapper.style.height = '';
     }
     dragged = null;
     console.warn("Card's dragged state has been voided")
   });
+}
+
+export const getSlots = () =>  {
+  return slotMap
+}
+
+export function elementOverlap(
+  card: HTMLElement,
+  targets: NodeListOf<HTMLElement>
+): HTMLElement | null {
+
+  const cardRect = card.getBoundingClientRect();
+
+  for (const target of targets) {
+    const targetRect = target.getBoundingClientRect();
+
+    const overlap = !(
+      cardRect.right < targetRect.left ||
+      cardRect.left > targetRect.right ||
+      cardRect.bottom < targetRect.top ||
+      cardRect.top > targetRect.bottom
+    );
+
+    if (overlap) return target;
+  }
+
+  return null;
+};
+
+export function assignCardToSlot(
+  card: HTMLElement,
+  slot: HTMLElement,
+  wrapper: HTMLElement,
+  slotMap: Map<HTMLElement, HTMLElement | null>
+): void {
+  const slotCard = slotMap.get(slot);
+
+  if (card.classList.contains("stored")) return;
+  if (slotCard) return;
+
+  const wrapperRect = wrapper.getBoundingClientRect();
+
+  wrapper.style.width = `${wrapperRect.width}px`;
+  wrapper.style.height = `${wrapperRect.height}px`;
+  wrapper.style.position = "fixed";
+
+  const slotRect = slot.getBoundingClientRect();
+  const cardRect = card.getBoundingClientRect();
+
+  wrapper.style.left = `${slotRect.left + slotRect.width / 2 - cardRect.width / 2}px`;
+  wrapper.style.top = `${slotRect.top + slotRect.height / 2 - cardRect.height / 2}px`;
+
+  card.classList.add("stored");
+  slotMap.set(slot, card);
+
+  console.debug("card assigned to slot");
 }

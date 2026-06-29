@@ -19,6 +19,10 @@ cardList.sort((a: Card, b: Card) => Number(a.id) - Number(b.id));
   <div id="deckgrid"> 
     <div class="deck-container">
       <span class="title">Deck</span>
+      <div id="options">
+        <button id="importdeckbtn" class="importbtn"></button>
+        <button id="exportdeckbtn" class="exportbtn"></button>
+      </div>
       <div class="cards-grid">
         {Array.from({ length: 9 }).map((_, index) => (
           <div class="cardSlot" id={`slot-${index}`}></div>
@@ -28,13 +32,25 @@ cardList.sort((a: Card, b: Card) => Number(a.id) - Number(b.id));
   </div>
   
   <div class="cardselector">
+    <input type="search" id="cardsearch">
     <div id="cardgrid">
         {cardList.map(card => (
           <CardItem card={card} />
         ))}
     </div>
   </div>
-<script>
+
+  <script>
   import { setupDrag } from '../scripts/ts/drag.ts';
+  import { imexLoop } from '../scripts/ts/imexsys.ts';
+  import { Search } from '../scripts/ts/search.ts';
+  import { setupFitty } from '../scripts/ts/textfit.ts';
+
   setupDrag();
-</script>
+  imexLoop();
+  Search();
+  setupFitty();
+  </script>
+
+  <script type="module" src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.js"></script>

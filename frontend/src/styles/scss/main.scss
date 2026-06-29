@@ -29,3 +29,43 @@ body {
   background-image: url(/backgrounds/Library-background.png);
 }
 
+code,
+pre {
+  font-family: "Fira Code", monospace;
+}
+
+.infowindow {
+  align-self: center;
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  width: 450px;
+  height: 600px;
+  background-color: rgba($color: #000000, $alpha: 0.9);
+  border: 6px solid transparent;
+  background:
+    linear-gradient(rgba(0,0,0,0.3), rgba(20,18,18,0.3)) padding-box,
+    linear-gradient(-25deg, #222222, #141212) border-box;
+  border-radius: 9px;
+  z-index: 99999;
+  color: white;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.copy {
+  flex: 0 0 auto;
+  height: 30px;
+  width: 30px;
+  align-items: center;
+}
+
+.copy ion-icon {
+  font-size: 24px;
+  position: relative;
+  right: 3px;
+}
+
+.hidden {
+  display: none;
+}

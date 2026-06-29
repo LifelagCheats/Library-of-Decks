@@ -15,7 +15,7 @@ const diceWithEffects: DieWithEffects[] | undefined = card.dice?.map((die, index
 ---
 
 <div class="card-wrapper">
-  <div class={`card rarity-${card.rarity.toLowerCase().replace(/\s+/g, '-')}`} id={`card-${card.cid.toLocaleLowerCase().replace(/\s+/g, '-')}`} data-order={`${card.id}`}>
+  <div class={`card rarity-${card.rarity.toLowerCase().replace(/\s+/g, '-')}`} id={`card-${card.cid.toLocaleLowerCase().replace(/\s+/g, '-')}`} data-order={`${card.id}`} data-name={`${card.name}`}>
     <img src={card.card_cover} alt={card.name} class="cardcover"/>
     <div class="dice-container">
       {card.dice?.map((die) => (

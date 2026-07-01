@@ -116,6 +116,89 @@
       }
     ]
   },
+  "thurst": {
+    "id": 7,
+    "cid": "thrust",
+    "name": "Thrust",
+    "rarity": "paperback",
+    "light": 1,
+    "type": "melee",
+    "card_cover": "/cards/thrust.jpg",
+    "dice": [
+      {
+        "type": "pierce",
+        "range": [1, 4]
+      },
+      {
+        "type": "pierce",
+        "range": [1, 4]
+      }
+    ]
+  },
+  "wallop": {
+    "id": 8,
+    "cid": "wallop",
+    "name": "Wallop",
+    "rarity": "paperback",
+    "light": 2,
+    "type": "melee",
+    "card_cover": "/cards/wallop.jpg",
+    "dice": [
+      {
+        "type": "blunt",
+        "range": [2, 6]
+      },
+      {
+        "type": "blunt",
+        "range": [2, 4]
+      }
+    ]
+  },
+  "preemptive-strike": {
+    "id": 9,
+    "cid": "preemptive-strike",
+    "name": "Preemptive Strike",
+    "rarity": "paperback",
+    "light": 2,
+    "type": "melee",
+    "card_cover": "/cards/preemptive_strike.jpg",
+    "dice": [
+      {
+        "type": "slash",
+        "range": [3, 5]
+      },
+      {
+        "type": "evade",
+        "range": [1, 8]
+      }
+    ]
+  },
+  "quickness": {
+    "id": 10,
+    "cid": "quickness",
+    "name": "Quickness",
+    "rarity": "paperback",
+    "light": 1,
+    "type": "melee",
+    "card_cover": "/cards/quickness.jpg",
+    "dice": [
+      {
+        "type": "blunt",
+        "range": [1, 4]
+      },
+      {
+        "type": "evade",
+        "range": [1, 6]
+      }
+    ],
+    "effects": [
+      {
+        "trigger": "On use",
+        "description": "Gain 1 Haste next Scene"
+      }
+    ]
+  },
+
   "gut-harvesting": {
     "id": 11,
     "cid": "gut-harvesting",
@@ -207,7 +290,249 @@
       }
     ]
   },
-  "graze_the_grass": {
+  "bite-off": {
+    "id": 14,
+    "cid": "bite-off",
+    "name": "Bite Off",
+    "rarity": "paperback",
+    "light": 1,
+    "type": "melee",
+    "card_cover": "/cards/bite_off.jpg",
+    "dice": [
+      {
+        "type": "slash",
+        "range": [1, 4]
+      },
+      {
+        "type": "blunt",
+        "range": [1, 4]
+      }
+    ],
+    "effects": [
+      {
+        "trigger": "On hit",
+        "description": "Inflict 1 Bleed next Scene",
+        "hook": 1
+      }
+    ]
+  },
+  "backstreets_dash": {
+    "id": 15,
+    "cid": "backstreets-dash",
+    "name": "Backstreets Dash",
+    "rarity": "hardcover",
+    "light": 1,
+    "type": "melee",
+    "card_cover": "/cards/backstreets_dash.jpg",
+    "dice": [
+      {
+        "type": "pierce",
+        "range": [1, 8]
+      }
+    ],
+    "effects": [
+      {
+        "trigger": "On hit",
+        "description": "Inflict 1 Bleed next Scene",
+        "hook": 1
+      }
+    ]
+  },
+  "skitter-away": {
+    "id": 16,
+    "cid": "skitter-away",
+    "name": "Skitter Away",
+    "rarity": "hardcover",
+    "light": 1,
+    "type": "melee",
+    "card_cover": "/cards/skitter_away.jpg",
+    "dice": [
+      {
+        "type": "evade",
+        "range": [1, 6]
+      },
+      {
+        "type": "evade",
+        "range": [1, 6]
+      },
+      {
+        "type": "blunt",
+        "range": [1, 4]
+      }
+    ]
+  },
+  "commandeering": {
+    "id": 17,
+    "cid": "commandeering",
+    "name": "Commandeering",
+    "rarity": "limited",
+    "light": 3,
+    "type": "melee",
+    "card_cover": "/cards/commandeering.jpg",
+    "dice": [
+      {
+        "type": "blunt",
+        "range": [4, 8]
+      },
+      {
+        "type": "block",
+        "range": [3, 4]
+      },
+      {
+        "type": "pierce",
+        "range": [3, 4]
+      }
+    ],
+    "effects": [
+      {
+        "trigger": "On use",
+        "description": "Give 1 Protection to all allies next scene"
+      }
+    ]
+  },
+  "youre_too_slow": {
+    "id": 18,
+    "cid": "youre-too-slow",
+    "name": "You're Too Slow",
+    "rarity": "hardcover",
+    "light": 2,
+    "type": "melee",
+    "card_cover": "/cards/too_slowYun.jpg",
+    "dice": [
+      {
+        "type": "evade",
+        "range": [1, 9]
+      },
+      {
+        "type": "slash",
+        "range": [2, 4]
+      }
+    ],
+    "effects": [
+      {
+        "trigger": "On clash win",
+        "description": "Add +2 Power to the next die",
+        "hook": 1
+      },
+      {
+        "trigger": "On hit",
+        "description": "Inflict 2 Fragile next Scene",
+        "hook": 2
+      }
+    ]
+  },
+  "struggle": {
+    "id": 19,
+    "cid": "struggle",
+    "name": "Struggle",
+    "rarity": "limited",
+    "light": 2,
+    "type": "melee",
+    "card_cover": "/cards/struggle.jpg",
+    "dice": [
+      {
+        "type": "block",
+        "range": [2, 6]
+      },
+      {
+        "type": "block",
+        "range": [2, 5]
+      },
+      {
+        "type": "blunt",
+        "range": [2, 6]
+      }
+    ],
+    "effects": [
+      {
+        "trigger": "On use",
+        "description": "Gain 2 Protection next Scene"
+      }
+    ]
+  },
+  "little_test": {
+    "id": 20,
+    "cid": "time-for-a-little-test",
+    "name": "Time for a Little Test",
+    "rarity": "paperback",
+    "light": 2,
+    "type": "melee",
+    "card_cover": "/cards/little_test.jpg",
+    "dice": [
+      {
+        "type": "block",
+        "range": [2, 6]
+      },
+      {
+        "type": "slash",
+        "range": [2, 4]
+      },
+      {
+        "type": "slash",
+        "range": [2, 3]
+      }
+    ],
+    "effects": [
+      {
+        "trigger": "On clash win",
+        "description": "Lower max value of opponent's next die by 3",
+        "hook": 1
+      }
+    ]
+  },
+  "feelin-good": {
+    "id": 21,
+    "cid": "feelin'-good",
+    "name": "Feelin' Good",
+    "rarity": "hardcover",
+    "light": 1,
+    "type": "melee",
+    "card_cover": "/cards/feelin_good.jpg",
+    "dice": [
+      {
+        "type": "slash",
+        "range": [1, 5]
+      },
+      {
+        "type": "block",
+        "range": [3, 4]
+      }
+    ],
+    "effects": [
+      {
+        "trigger": "On hit",
+        "description": "Inflict 1 Fragile next Scene",
+        "hook": 1
+      }
+    ]
+  },
+  "preparation": {
+    "id": 22,
+    "cid": "preparation",
+    "name": "Preparation",
+    "rarity": "paperback",
+    "light": 1,
+    "type": "melee",
+    "card_cover": "/cards/preparation.jpg",
+    "dice": [
+      {
+        "type": "pierce",
+        "range": [2, 3]
+      },
+      {
+        "type": "block",
+        "range": [3, 4]
+      }
+    ],
+    "effects": [
+      {
+        "trigger": "On clash win",
+        "description": "Restore 1 Light",
+        "hook": 2
+      }
+    ]
+  },
+  "graze-the-grass": {
     "id": 1001,
     "cid": "graze-the-grass",
     "name": "Graze the Grass",

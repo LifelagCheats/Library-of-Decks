@@ -14,6 +14,9 @@ const diceWithEffects: DieWithEffects[] | undefined = card.dice?.map((die, index
 } as DieWithEffects));
 ---
 
+{/* TODO: add card type (melee, ranged) anotations and also add light number icon to show more info 
+    also, add all combat pages from Canard-level to cards.json (i can't write this as a json comment)*/}
+
 <div class="card-wrapper">
   <div class={`card rarity-${card.rarity.toLowerCase().replace(/\s+/g, '-')}`} id={`card-${card.cid.toLocaleLowerCase().replace(/\s+/g, '-')}`} data-order={`${card.id}`} data-name={`${card.name}`}>
     <img src={card.card_cover} alt={card.name} class="cardcover"/>

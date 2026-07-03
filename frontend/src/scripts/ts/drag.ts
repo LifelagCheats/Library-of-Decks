@@ -1,5 +1,11 @@
 const slotMap = new Map<HTMLElement, HTMLElement | null>();
 
+/* TODO: Completely revamp this code to make it so that:
+ - Visuals change depending on state (more specifically, slotMap), making our job easier
+ - We need a better drag system
+ - do we need a better import system? i don't think so.
+ */
+
 export function setupDrag(): void {
   let dragged: HTMLElement | null = null;
   let offsetX: number = 0;

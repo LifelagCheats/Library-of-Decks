@@ -1,13 +1,10 @@
-```
 # Contributing
 
 Hey, welcome to the project. Read this before you start pushing stuff so we're all on the same page.
 
----
-
 ## Project Structure
 
-Our project is a frontend-only Astro application with TypeScript and SCSS.
+Our project is (for now) a frontend-only Astro application with TypeScript and SCSS.
 
 ```
 frontend/
@@ -43,8 +40,6 @@ frontend/
 
 > **Important**: Do not put client‑side logic inside `.astro` components. Use the `scripts/` folder and import them via `<script>` tags when needed.
 
----
-
 ## Tooling
 
 We use the following tools:
@@ -71,23 +66,7 @@ npm run preview      # preview production build locally
 npm run lint         # run ESLint
 npm run typecheck    # run TypeScript type checking
 ```
-```
-```
-```
-```
-```
-```
-```
-```
-```
-```
-```
-```
-```
-```
 > Always run `npm run lint` and `npm run typecheck` before committing.
-
----
 
 ## Branching
 
@@ -109,8 +88,6 @@ git push origin feature/drag-improvements
 ```
 
 > When `dev` is stable and tested, we merge it into `main` together (usually after a release).
-
----
 
 ## Commit Messages
 
@@ -138,8 +115,6 @@ chore(deps): bump astro to v4.5.0
 
 If you need to provide more context, leave a blank line and write a short paragraph below.
 
----
-
 ## Pull Requests
 
 - No pushing directly to `main` or `dev` – everything goes through a PR.
@@ -151,8 +126,6 @@ If you need to provide more context, leave a blank line and write a short paragr
 - Link any related issue if applicable.
 - Ensure CI passes (lint, typecheck, build).
 - At least one approval from another team member is required before merging.
-
----
 
 ## Code Style
 
@@ -168,8 +141,6 @@ Key points:
 - Write comments for *why*, not *what*.
 - No `console.log` in production code; use `console.debug` or remove before PR.
 
----
-
 ## Testing
 
 Currently we don't have a formal test suite, but we aim to:
@@ -180,8 +151,6 @@ Currently we don't have a formal test suite, but we aim to:
 
 > If you add a feature that changes state (like slot assignments), test the import/export flow too.
 
----
-
 ## What Not To Do
 
 - Don't commit `node_modules/` or any generated build output (`.astro/`, `dist/`).
@@ -190,8 +159,6 @@ Currently we don't have a formal test suite, but we aim to:
 - Don't use magic numbers/strings – define them as `const` at the top of the file or in a `constants.ts`.
 - Don't ignore TypeScript errors – fix them or use `// @ts-expect-error` with a comment.
 - Don't commit directly to `main` or `dev` – always use feature branches.
-
----
 
 ## CI / CD (Continuous Integration / Deployment)
 
@@ -204,13 +171,9 @@ We use GitHub Actions (or similar) to:
 
 > If you add a new npm script, make sure it's included in the CI workflow.
 
----
-
 ## Code of Conduct
 
 We aim to maintain a respectful and collaborative environment. Be kind, give constructive feedback, and assume good intentions.
-
----
 
 ## Questions?
 

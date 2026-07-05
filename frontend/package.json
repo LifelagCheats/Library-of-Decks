@@ -22,7 +22,7 @@
     "fitty": "^2.4.2"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^8.59.2",
+    "@typescript-eslint/eslint-plugin": "^8.62.1",
     "@typescript-eslint/parser": "^8.59.2",
     "eslint": "^10.3.0",
     "husky": "^9.1.7",

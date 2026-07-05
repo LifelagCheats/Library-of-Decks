@@ -4,4 +4,7 @@ updates:
     directory: "/frontend"
     schedule:
       interval: "daily"
+    
+    target-branch: "dev"
+
     open-pull-requests-limit: 5

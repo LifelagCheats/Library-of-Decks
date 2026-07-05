@@ -6,14 +6,19 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "lint": "eslint . --ext .ts",
-    "lint:fix": "eslint . --ext .ts --fix",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "typecheck": "tsc --noEmit",
-    "astro": "astro"
+    "astro": "astro",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "frontend/**/*.{js,ts,jsx,tsx}": [
+      "cd frontend && npx eslint --fix"
+    ]
   },
   "dependencies": {
-    "@chenglou/pretext": "^0.0.4",
-    "astro": "^5.17.1",
+    "astro": "^7.0.6",
     "fitty": "^2.4.2"
   },
   "devDependencies": {
@@ -21,7 +26,9 @@
     "@typescript-eslint/parser": "^8.59.2",
     "eslint": "^10.3.0",
     "globals": "^17.6.0",
+    "husky": "^9.1.7",
     "jiti": "^2.7.0",
+    "lint-staged": "^17.0.8",
     "sass": "^1.97.3",
     "typescript-eslint": "^8.59.2"
   }

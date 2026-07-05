@@ -14,7 +14,6 @@ const cardList = Object.values(cards) as Card[];
 cardList.sort((a: Card, b: Card) => Number(a.id) - Number(b.id));
 ---
 
-<!doctype html>
 <Layout title="Library of Decks">
   <div id="deckgrid"> 
     <div class="deck-container">
@@ -41,16 +40,12 @@ cardList.sort((a: Card, b: Card) => Number(a.id) - Number(b.id));
   </div>
 
   <script>
-  import { setupDrag } from '../scripts/ts/drag.ts';
-  import { imexLoop } from '../scripts/ts/imexsys.ts';
-  import { Search } from '../scripts/ts/search.ts';
-  import { setupFitty } from '../scripts/ts/textfit.ts';
-
-  setupDrag();
-  imexLoop();
-  Search();
-  setupFitty();
+    // Dynamically import your main script after the DOM loads
+    document.addEventListener('DOMContentLoaded', async () => {
+      await import('../scripts/ts/main.ts');
+    });
   </script>
 
   <script type="module" src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.js"></script>
+</Layout>

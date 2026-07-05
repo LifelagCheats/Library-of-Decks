@@ -1,6 +1,9 @@
 {
   "name": "library-of-decks",
   "private": true,
+  "workspaces": [
+    "frontend"
+  ],
   "devDependencies": {
     "husky": "^9.1.7"
   },

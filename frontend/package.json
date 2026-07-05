@@ -12,7 +12,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@chenglou/pretext": "^0.0.4",
+    "@chenglou/pretext": "^0.0.8",
     "astro": "^5.17.1",
     "fitty": "^2.4.2"
   },

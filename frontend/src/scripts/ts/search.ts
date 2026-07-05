@@ -12,8 +12,8 @@ export function Search(): void {
       const isVisible = name.includes(value);
 
       cardEl.classList.toggle("hidden", !isVisible);
-    })
-  })
+    });
+  });
 }
 
 

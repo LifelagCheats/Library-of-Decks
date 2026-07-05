@@ -15,9 +15,9 @@ export function setupDrag(): void {
   const slots = document.querySelectorAll('.cardSlot') as NodeListOf<HTMLElement>;
   slots.forEach(slot => {
     slotMap.set(slot, null);
-  })
+  });
 
-  const cardgrid: HTMLElement | null = document.getElementById("cardgrid") 
+  const cardgrid: HTMLElement | null = document.getElementById("cardgrid");
   let assignedSlot: HTMLElement | null = null;
   let wrapper: HTMLElement | null = null;
 
@@ -38,12 +38,12 @@ export function setupDrag(): void {
 
       if (assignedSlot) {
         if(slotMap.get(assignedSlot) === dragged) {
-          slotMap.set(assignedSlot, null)
+          slotMap.set(assignedSlot, null);
         }
       }
 
       dragged.setPointerCapture(pointerId);
-      dragged.classList.add('dragging')
+      dragged.classList.add('dragging');
     });
   });
 
@@ -52,11 +52,11 @@ export function setupDrag(): void {
     wrapper = dragged.closest('.card-wrapper') as HTMLElement;
     const wrapperRect = wrapper.getBoundingClientRect();
     const pe = e as PointerEvent; 
-    let deltaX: number = pe.clientX - previousX;
-    let rotation: number = deltaX * 0.2;
+    const deltaX: number = pe.clientX - previousX;
+    const rotation: number = deltaX * 0.2;
     wrapper.style.width = `${wrapperRect.width}px`;
     wrapper.style.height = `${wrapperRect.height}px`;
-    wrapper.style.position = `fixed`
+    wrapper.style.position = `fixed`;
     wrapper.style.left = `${e.clientX - offsetX}px`;
     wrapper.style.top = `${e.clientY - offsetY}px`;
     dragged.style.transform = `rotate(${rotation}deg)`;
@@ -90,13 +90,13 @@ export function setupDrag(): void {
       wrapper.style.height = '';
     }
     dragged = null;
-    console.warn("Card's dragged state has been voided")
+    console.warn("Card's dragged state has been voided");
   });
 }
 
 export const getSlots = () =>  {
-  return slotMap
-}
+  return slotMap;
+};
 
 export function elementOverlap(
   card: HTMLElement,

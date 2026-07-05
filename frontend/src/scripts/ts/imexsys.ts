@@ -11,7 +11,7 @@ const GiveJSON = () => {
       card: card?.id ?? null
     })
   );
-}
+};
 
 type Slot =  {
   slot: string;
@@ -26,18 +26,18 @@ export function imexLoop(): void {
     const data: Slot[] = JSON.parse(importcode);
     data.forEach(el => {
       const slotEl = document.getElementById(el.slot);
-      const cardEl = el.card ? document.getElementById(el.card) : null
-      if (!cardEl) return
+      const cardEl = el.card ? document.getElementById(el.card) : null;
+      if (!cardEl) return;
       const wrapper: HTMLElement | null = cardEl.closest(".card-wrapper");
 
 
       if (slotEl && wrapper) {
         assignCardToSlot(cardEl, slotEl, wrapper, slotMap);
       }
-      console.log(el)
+      console.log(el);
     });
     console.log(slotMap);
-    })
+    });
 
   exportbtn.addEventListener("click", () => {
     const existingWindow = document.querySelector(".infowindow");
@@ -68,5 +68,5 @@ export function imexLoop(): void {
     copybtn.addEventListener("click", () => {
       navigator.clipboard.writeText(JSON.stringify(GiveJSON(), null, 2));
     });
-  })
+  });
 }

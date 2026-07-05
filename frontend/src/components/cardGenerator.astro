@@ -1,6 +1,6 @@
 ---
 import { processDie } from '@scripts/ts/cardprocessor.ts';
-import type { Card, DieWithEffects } from '@types/card.ts';
+import type { Card, DieWithEffects } from '@/types/card.ts';
 
 interface Props {
   card: Card;
@@ -48,7 +48,7 @@ const diceWithEffects: DieWithEffects[] | undefined = card.dice?.map((die, index
             <span class={`die-range ${die.type}`}>{die.range[0]}-{die.range[1]}</span>
             <div class="die-hook">
               {die.hookedEffects.map(effect => (
-                <span div set:html={processDie(effect.trigger) + ' ' + effect.description} />
+                <span set:html={processDie(effect.trigger) + ' ' + effect.description} />
               ))}
             </div>
           </div>

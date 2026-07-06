@@ -9,8 +9,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "typecheck": "tsc --noEmit",
-    "astro": "astro",
-    "prepare": "cd .. && husky frontend/.husky"
+    "astro": "astro"
   },
   "lint-staged": {
     "frontend/**/*.{js,ts,jsx,tsx}": [

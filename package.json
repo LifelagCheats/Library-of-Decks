@@ -4,6 +4,9 @@
   "workspaces": [
     "frontend"
   ],
+  "engines": {
+    "node": ">=22"
+  },
   "devDependencies": {
     "husky": "^9.1.7"
   },

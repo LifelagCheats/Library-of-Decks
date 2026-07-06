@@ -6,4 +6,6 @@ npm run typecheck
 npm run lint
 npm run build
 
+rm -rf frontend/dist
+
 echo "✅ All checks passed."

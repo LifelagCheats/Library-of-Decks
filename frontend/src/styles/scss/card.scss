@@ -87,6 +87,7 @@ $cardW: 150px;
   .cardcover {
     position: absolute;
     width: 110%;
+    height: 60%;
     object-fit: cover;
     z-index: -1;
     transform: rotate(-4deg);

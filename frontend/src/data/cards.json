@@ -6,7 +6,7 @@
     "rarity": "paperback",
     "light": 0,
     "type": "melee",
-    "card_cover": "/cards/evade.jpg",
+    "card_cover": "evade.jpg",
     "dice": [
       { "type": "evade", "range": [1, 4] }
     ],
@@ -20,7 +20,7 @@
     "rarity": "paperback",
     "light": 1,
     "type": "melee",
-    "card_cover": "/cards/light_attack.jpg",
+    "card_cover": "light_attack.jpg",
     "dice": [
       {
         "type": "pierce",
@@ -39,7 +39,7 @@
     "rarity": "paperback",
     "light": 1,
     "type": "melee",
-    "card_cover": "/cards/light_defense.jpg",
+    "card_cover": "light_defense.jpg",
     "dice": [
       {
         "type": "evade",
@@ -62,7 +62,7 @@
     "rarity": "paperback",
     "light": 2,
     "type": "melee",
-    "card_cover": "/cards/charge_and_cover.jpg",
+    "card_cover": "charge_and_cover.jpg",
     "dice": [
       {
         "type": "pierce",
@@ -81,7 +81,7 @@
     "rarity": "paperback",
     "light": 3,
     "type": "melee",
-    "card_cover": "/cards/focused_strikes.jpg",
+    "card_cover": "focused_strikes.jpg",
     "dice": [
       {
         "type": "slash",
@@ -104,7 +104,7 @@
     "rarity": "paperback",
     "light": 0,
     "type": "melee",
-    "card_cover": "/cards/dodge_and_strike.jpg",
+    "card_cover": "dodge_and_strike.jpg",
     "dice": [
       {
         "type": "evade",
@@ -123,7 +123,7 @@
     "rarity": "paperback",
     "light": 1,
     "type": "melee",
-    "card_cover": "/cards/thrust.jpg",
+    "card_cover": "thrust.jpg",
     "dice": [
       {
         "type": "pierce",
@@ -142,7 +142,7 @@
     "rarity": "paperback",
     "light": 2,
     "type": "melee",
-    "card_cover": "/cards/wallop.jpg",
+    "card_cover": "wallop.jpg",
     "dice": [
       {
         "type": "blunt",
@@ -161,7 +161,7 @@
     "rarity": "paperback",
     "light": 2,
     "type": "melee",
-    "card_cover": "/cards/preemptive_strike.jpg",
+    "card_cover": "preemptive_strike.jpg",
     "dice": [
       {
         "type": "slash",
@@ -180,7 +180,7 @@
     "rarity": "paperback",
     "light": 1,
     "type": "melee",
-    "card_cover": "/cards/quickness.jpg",
+    "card_cover": "quickness.jpg",
     "dice": [
       {
         "type": "blunt",
@@ -206,7 +206,7 @@
     "rarity": "limited",
     "light": 3,
     "type": "melee",
-    "card_cover": "/cards/Rats4.jpg",
+    "card_cover": "Rats4.jpg",
     "dice": [
       {
         "type": "slash",
@@ -241,7 +241,7 @@
     "rarity": "paperback",
     "light": 2,
     "type": "melee",
-    "card_cover": "/cards/Rats2.jpg",
+    "card_cover": "Rats2.jpg",
     "dice": [
       {
         "type": "block",
@@ -271,7 +271,7 @@
     "rarity": "limited",
     "light": 2,
     "type": "melee",
-    "card_cover": "/cards/Rats3.jpg",
+    "card_cover": "Rats3.jpg",
     "dice": [
       {
         "type": "blunt",
@@ -297,7 +297,7 @@
     "rarity": "paperback",
     "light": 1,
     "type": "melee",
-    "card_cover": "/cards/bite_off.jpg",
+    "card_cover": "bite_off.jpg",
     "dice": [
       {
         "type": "slash",
@@ -323,7 +323,7 @@
     "rarity": "hardcover",
     "light": 1,
     "type": "melee",
-    "card_cover": "/cards/backstreets_dash.jpg",
+    "card_cover": "backstreets_dash.jpg",
     "dice": [
       {
         "type": "pierce",
@@ -345,7 +345,7 @@
     "rarity": "hardcover",
     "light": 1,
     "type": "melee",
-    "card_cover": "/cards/skitter_away.jpg",
+    "card_cover": "skitter_away.jpg",
     "dice": [
       {
         "type": "evade",
@@ -368,7 +368,7 @@
     "rarity": "limited",
     "light": 3,
     "type": "melee",
-    "card_cover": "/cards/commandeering.jpg",
+    "card_cover": "commandeering.jpg",
     "dice": [
       {
         "type": "blunt",
@@ -397,7 +397,7 @@
     "rarity": "hardcover",
     "light": 2,
     "type": "melee",
-    "card_cover": "/cards/too_slowYun.jpg",
+    "card_cover": "too_slowYun.jpg",
     "dice": [
       {
         "type": "evade",
@@ -428,7 +428,7 @@
     "rarity": "limited",
     "light": 2,
     "type": "melee",
-    "card_cover": "/cards/struggle.jpg",
+    "card_cover": "struggle.jpg",
     "dice": [
       {
         "type": "block",
@@ -457,7 +457,7 @@
     "rarity": "paperback",
     "light": 2,
     "type": "melee",
-    "card_cover": "/cards/little_test.jpg",
+    "card_cover": "little_test.jpg",
     "dice": [
       {
         "type": "block",
@@ -487,7 +487,7 @@
     "rarity": "hardcover",
     "light": 1,
     "type": "melee",
-    "card_cover": "/cards/feelin_good.jpg",
+    "card_cover": "feelin_good.jpg",
     "dice": [
       {
         "type": "slash",
@@ -513,7 +513,7 @@
     "rarity": "paperback",
     "light": 1,
     "type": "melee",
-    "card_cover": "/cards/preparation.jpg",
+    "card_cover": "preparation.jpg",
     "dice": [
       {
         "type": "pierce",
@@ -539,7 +539,7 @@
     "rarity": "paperback",
     "light": 1,
     "type": "melee",
-    "card_cover": "/cards/Rcorp14.jpg",
+    "card_cover": "Rcorp14.jpg",
     "dice": [
       {
         "type": "block",
@@ -570,7 +570,7 @@
     "rarity": "limited",
     "light": 1,
     "type": "melee",
-    "card_cover": "/cards/TheIndex6.jpg",
+    "card_cover": "TheIndex6.jpg",
     "dice": [
       {
         "type": "block",
@@ -613,7 +613,7 @@
     "rarity": "objet-dart",
     "light": 3,
     "type": "melee",
-    "card_cover": "/cards/Puppet3.jpg",
+    "card_cover": "Puppet3.jpg",
     "dice": [
       {
         "type": "block",

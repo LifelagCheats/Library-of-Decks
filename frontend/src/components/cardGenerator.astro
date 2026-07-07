@@ -1,4 +1,7 @@
 ---
+import { Image } from "astro:assets";
+import { getCardImage } from "@/utils/image-resolver";
+
 import { processDie } from '@scripts/ts/cardprocessor.ts';
 import type { Card, DieWithEffects } from '@/types/card.ts';
 
@@ -12,6 +15,8 @@ const diceWithEffects: DieWithEffects[] | undefined = card.dice?.map((die, index
   ...die,
   hookedEffects: card.effects?.filter(e => e.hook === index + 1) ?? []
 } as DieWithEffects));
+
+const image = getCardImage(card.card_cover);
 ---
 
 {/* TODO: add card type (melee, ranged) anotations and also add light number icon to show more info 
@@ -19,11 +24,21 @@ const diceWithEffects: DieWithEffects[] | undefined = card.dice?.map((die, index
 
 <div class="card-wrapper">
   <div class={`card rarity-${card.rarity.toLowerCase().replace(/\s+/g, '-')}`} id={`card-${card.cid.toLocaleLowerCase().replace(/\s+/g, '-')}`} data-order={`${card.id}`} data-name={`${card.name}`}>
-    <img src={card.card_cover} alt={card.name} class="cardcover"/>
+    <Image 
+      src={image}
+      widths={[400, 800, 1200, 2000]}
+      sizes="(max-width: 768px) 200px, 300px"
+      quality={90}
+      format="webp"
+      alt={card.name} 
+      loading="lazy" 
+      decoding="async" 
+      class="cardcover"
+    />
     <div class="dice-container">
       {card.dice?.map((die) => (
         <div class="die">
-          <img src={`/icons/${die.type}Die.png`} alt={die.type}/>
+          <img src={`/icons/${die.type}Die.png`} loading="lazy" decoding="async" alt={die.type}/>
         </div>
       ))}
     </div>
@@ -44,7 +59,7 @@ const diceWithEffects: DieWithEffects[] | undefined = card.dice?.map((die, index
       <div class="pagedice">
         {diceWithEffects?.map((die, index) => (
           <div class="infodie" data-die-id={index + 1}>
-            <img src={`/icons/${die.type}Die.png`} alt={die.type}/>
+            <img src={`/icons/${die.type}Die.png`} loading="lazy" alt={die.type}/>
             <span class={`die-range ${die.type}`}>{die.range[0]}-{die.range[1]}</span>
             <div class="die-hook">
               {die.hookedEffects.map(effect => (

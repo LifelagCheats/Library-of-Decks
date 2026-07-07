@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 import { getCardImage } from "@/utils/image-resolver";
 
-import { processDie } from '@scripts/ts/cardprocessor.ts';
+import { processTrigger, processDescription } from '@scripts/ts/cardprocessor.ts';
 import type { Card, DieWithEffects } from '@/types/card.ts';
 
 interface Props {
@@ -50,8 +50,8 @@ const image = getCardImage(card.card_cover);
       {card.effects?.map(effect => (
         !effect.hook && (
           <div class="effect">
-            <div set:html={processDie(effect.trigger)} />
-            <span class="effect-description">{effect.description}</span>
+            <div set:html={processTrigger(effect.trigger)} />
+              <span class="effect-description" set:html={processDescription(effect.description)}/>
           </div>
         )
       ))}
@@ -63,7 +63,7 @@ const image = getCardImage(card.card_cover);
             <span class={`die-range ${die.type}`}>{die.range[0]}-{die.range[1]}</span>
             <div class="die-hook">
               {die.hookedEffects.map(effect => (
-                <span set:html={processDie(effect.trigger) + ' ' + effect.description} />
+                <span set:html={processTrigger(effect.trigger) + ' ' + processDescription(effect.description)} />
               ))}
             </div>
           </div>

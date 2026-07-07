@@ -9,6 +9,10 @@
   ],
   "compilerOptions": {
     "resolveJsonModule": true,
+    "types": [
+      "astro/client",
+      "vite/client"
+    ],
     "paths": {
       "@/*": [
         "./src/*"

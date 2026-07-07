@@ -13,7 +13,7 @@
   },
   "lint-staged": {
     "frontend/**/*.{js,ts,jsx,tsx}": [
-      "cd frontend && npx eslint --fix"
+      "npx eslint --fix"
     ]
   },
   "dependencies": {

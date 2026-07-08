@@ -8,3 +8,9 @@ updates:
     target-branch: "dev"
 
     open-pull-requests-limit: 5
+
+    assignees:
+      - LifelagCheats
+
+    reviewers:
+      - LifelagCheats

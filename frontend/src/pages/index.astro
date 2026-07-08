@@ -3,13 +3,12 @@ import Layout from '@layouts/layout.astro'
 import '@styles/scss/card.scss';
 import '@styles/scss/deck.scss';
 import '@styles/scss/main.scss';
-import '@styles/scss/effects.scss'
-import cards from '@data/cards.json';
+import '@styles/scss/effects.scss';
+import { cards } from '@/utils/loader'
 import type { Card } from '@/types/card';
 import CardItem from '@components/cardGenerator.astro';
 
-
-const cardList = Object.values(cards) as Card[];
+const cardList = Object.values(cards);
 
 cardList.sort((a: Card, b: Card) => Number(a.id) - Number(b.id));
 ---
@@ -43,6 +42,7 @@ cardList.sort((a: Card, b: Card) => Number(a.id) - Number(b.id));
     // Dynamically import your main script after the DOM loads
     document.addEventListener('DOMContentLoaded', async () => {
       await import('../scripts/ts/main.ts');
+      await import('../scripts/ts/tooltip.ts')
     });
   </script>
 

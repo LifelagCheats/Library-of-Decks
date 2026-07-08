@@ -3,6 +3,21 @@ $defense-color: #5FAFF0;
 $counter-color: #F4AF2F;
 $trigger_main-color: #D3D40A;
 
+$status-colors: (
+  protection: #89d5d3,
+  bleed: #a50100,
+  charge: #3da8ff,
+  haste: #f49c63,
+  light: #fdf9cd,
+  fragile: #ff667e
+);
+
+@each $status, $color in $status-colors {
+  .status-#{$status} {
+    color: $color;
+  }
+}
+
 .separator {
   width: 100%;
   height: 2px;
@@ -25,6 +40,35 @@ $trigger_main-color: #D3D40A;
 
 .effect-description {
   color: white;
+}
+
+.status-icon {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+.icon-wrapper {
+  width: 1.15em;
+  height: 1.15em;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+.keyword {
+  display: inline-flex;
+  align-items: center;
+  font-weight: bold;
+  gap: 0.15em;
+  line-height: 1;
+  cursor: help;
+
+  border-bottom: 1px solid currentColor;
 }
 
 .die-hook {
@@ -76,4 +120,49 @@ $trigger_main-color: #D3D40A;
   }
 
   font-weight: bold;
+}
+
+.tooltip {
+    position: fixed;
+    pointer-events: none;
+
+    z-index: 99999;
+
+    padding: .6rem .8rem;
+
+    background: rgba(#000000, 0.7);
+
+    color: white;
+
+    max-width: 260px;
+
+    font-size: .81rem;
+
+    line-height: 1.4;
+
+    border: 2px solid #604026;
+}
+
+.tooltip[hidden] {
+    display: none;
+}
+
+.status-bleed .status-icon {
+  transform: scale(0.75);
+}
+
+.status-charge .status-icon {
+  transform: scale(1.35);
+}
+
+.status-light .status-icon {
+  transform: scale(0.85);
+}
+
+.status-fragile .status-icon {
+  transform: scale(0.75);
+}
+
+.status-haste .status-icon {
+  transform: scale(1.25);
 }

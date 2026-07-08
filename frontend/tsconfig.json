@@ -9,34 +9,41 @@
   ],
   "compilerOptions": {
     "resolveJsonModule": true,
-    "baseUrl": ".",
+    "types": [
+      "astro/client",
+      "vite/client",
+      "node"
+    ],
     "paths": {
       "@/*": [
-        "src/*"
+        "./src/*"
       ],
       "@components/*": [
-        "src/components/*"
+        "./src/components/*"
       ],
       "@layouts/*": [
-        "src/layouts/*"
+        "./src/layouts/*"
       ],
       "@assets/*": [
-        "src/assets/*"
+        "./src/assets/*"
       ],
       "@scripts/*": [
-        "src/scripts/*"
+        "./src/scripts/*"
       ],
       "@styles/*": [
-        "src/styles/*"
+        "./src/styles/*"
       ],
       "@pages/*": [
-        "src/pages/*"
+        "./src/pages/*"
       ],
       "@data/*": [
-        "src/data/*"
+        "./src/data/*"
       ],
       "@types/*": [
-        "src/types/*"
+        "./src/types/*"
+      ],
+      "@utils/*": [
+        "./src/types/*"
       ]
     }
   }

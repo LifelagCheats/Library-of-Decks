@@ -66,6 +66,7 @@ $status-colors: (
   font-weight: bold;
   gap: 0.15em;
   line-height: 1;
+  cursor: help;
 
   border-bottom: 1px solid currentColor;
 }
@@ -119,6 +120,31 @@ $status-colors: (
   }
 
   font-weight: bold;
+}
+
+.tooltip {
+    position: fixed;
+    pointer-events: none;
+
+    z-index: 99999;
+
+    padding: .6rem .8rem;
+
+    background: rgba(#000000, 0.7);
+
+    color: white;
+
+    max-width: 260px;
+
+    font-size: .81rem;
+
+    line-height: 1.4;
+
+    border: 2px solid #604026;
+}
+
+.tooltip[hidden] {
+    display: none;
 }
 
 .status-bleed .status-icon {

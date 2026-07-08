@@ -42,6 +42,7 @@ cardList.sort((a: Card, b: Card) => Number(a.id) - Number(b.id));
     // Dynamically import your main script after the DOM loads
     document.addEventListener('DOMContentLoaded', async () => {
       await import('../scripts/ts/main.ts');
+      await import('../scripts/ts/tooltip.ts')
     });
   </script>
 

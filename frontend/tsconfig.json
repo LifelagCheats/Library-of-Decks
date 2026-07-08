@@ -11,7 +11,8 @@
     "resolveJsonModule": true,
     "types": [
       "astro/client",
-      "vite/client"
+      "vite/client",
+      "node"
     ],
     "paths": {
       "@/*": [

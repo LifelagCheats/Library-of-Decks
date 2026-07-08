@@ -15,24 +15,7 @@ export type DieWithEffects = Die & {
   hookedEffects: Effect[];
 };
 
-export type Card = {
-  id: number;
-  cid: string;
-  name: string;
-  rarity: string;
-  light: number;
-  type: string;
-  card_cover: string;
-  dice?: Array<{
-    type: "slash" | "pierce" | "blunt";
-    range: [number, number];
-  }>;
-  effects?: Array<{
-    trigger: string;
-    description: string;
-    hook?: number;
-  }>;
-};
+export type Card = z.infer<typeof CardSchema>;
 
 /*
  INFO: Example card format:

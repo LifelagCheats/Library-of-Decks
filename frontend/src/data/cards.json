@@ -532,6 +532,158 @@
       }
     ]
   },
+  "blow-it-up": {
+    "id": 23,
+    "cid": "b-blow-it-up",
+    "name": "B-blow It Up!",
+    "rarity": "paperback",
+    "light": 2,
+    "type": "melee",
+    "card_cover": "Iron5.jpg",
+    "dice": [
+      {
+        "type": "pierce",
+        "range": [1, 6]
+      },
+      {
+        "type": "blunt",
+        "range": [2, 5]
+      }
+    ],
+    "effects": [
+      {
+        "trigger": "On hit",
+        "description": "Inflict 1 Paralysis next Scene",
+        "hook": 1
+      }
+    ]
+  },
+  "yo-live-once": {
+    "id": 24,
+    "cid": "you-only-live-once",
+    "name": "Y-you Only Live Once!",
+    "rarity": "limited",
+    "light": 3,
+    "type": "melee",
+    "card_cover": "Iron2.jpg",
+    "dice": [
+      {
+        "type": "blunt",
+        "range": [1, 12]
+      }
+    ],
+    "effects": [
+      {
+        "trigger": "On hit",
+        "description": "Inflict 2 Paralysis next Scene",
+        "hook": 1
+      }
+    ]
+  },
+  "charge-up": {
+    "id": 25,
+    "cid": "c-charge-up",
+    "name": "C-charge Up!",
+    "rarity": "limited",
+    "light": 0,
+    "type": "melee",
+    "card_cover": "Iron4.jpg",
+    "dice": [
+      {
+        "type": "blunt",
+        "range": [2, 3]
+      }
+    ],
+    "effects": [
+      {
+        "trigger": "On use",
+        "description": "Restore 1 Light; Inflict 1 Paralysis on self next Scene"
+      }
+    ]
+  },
+  "endure": {
+    "id": 26,
+    "cid": "e-endure",
+    "name": "E-endure",
+    "rarity": "hardcover",
+    "light": 1,
+    "type": "melee",
+    "card_cover": "Iron1.jpg",
+    "dice": [
+      {
+        "type": "block",
+        "range": [2, 5]
+      },
+      {
+        "type": "block",
+        "range": [3, 4]
+      },
+      {
+        "type": "blunt",
+        "range": [1, 3]
+      }
+    ],
+    "effects": [
+      {
+        "trigger": "On clash win",
+        "description": "Inflict 1 Paralysis next Scene",
+        "hook": 2
+      },
+      {
+        "trigger": "On hit",
+        "description": "Inflict 1 Paralysis next Scene",
+        "hook": 3
+      }
+    ]
+  },
+  "dried-up": {
+    "id": 27,
+    "cid": "d-dried-up",
+    "name": "D-dried Up!",
+    "rarity": "hardcover",
+    "light": 2,
+    "type": "melee",
+    "card_cover": "Iron6.jpg",
+    "dice": [
+      {
+        "type": "slash",
+        "range": [2, 4]
+      },
+      {
+        "type": "block",
+        "range": [3, 4]
+      }
+    ],
+    "effects": [
+      {
+        "trigger": "On use",
+        "description": "Gain 2 Strength next Scene"
+      }
+    ]
+  },
+  "chop-off": {
+    "id": 28,
+    "cid": "c-chop-it-off",
+    "name": "C-chop It Off!",
+    "rarity": "paperback",
+    "light": 2,
+    "type": "melee",
+    "card_cover": "Iron3.jpg",
+    "dice": [
+      {
+        "type": "pierce",
+        "range": [2, 3]
+      },
+      {
+        "type": "slash",
+        "range": [1, 1]
+      },
+      {
+        "type": "slash",
+        "range": [3, 3]
+      }
+    ]
+  },
   "graze-the-grass": {
     "id": 1001,
     "cid": "graze-the-grass",

@@ -8,6 +8,9 @@ $status-colors: (
   bleed: #a50100,
   charge: #3da8ff,
   haste: #f49c63,
+  bind: #f49c63,
+  strength: #fc6178,
+  paralysis: #ffcc1b,
   light: #fdf9cd,
   fragile: #ff667e
 );
@@ -26,17 +29,12 @@ $status-colors: (
   filter: blur(1.5px);
 }
 
-.trigger-onuse {
-  color: $trigger_main-color;
-}
-
-.trigger-onhit {
-  color: $trigger_main-color;
-}
-
+.trigger-onuse,
+.trigger-onhit,
 .trigger-clashwin {
   color: $trigger_main-color;
 }
+
 
 .effect-description {
   color: white;
@@ -165,4 +163,8 @@ $status-colors: (
 
 .status-haste .status-icon {
   transform: scale(1.25);
+}
+
+.status-bind .status-icon {
+  transform: scale(0.80);
 }

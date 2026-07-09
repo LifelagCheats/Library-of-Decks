@@ -1,4 +1,4 @@
-import { keywords } from "./cardprocessor";
+import { keywords } from "@data/keywords";
 
 const tooltip = document.createElement("div");
 
